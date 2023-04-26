@@ -1,8 +1,8 @@
-# ffmpeg_test
-Script to test ffmpeg/rtsp camera speed.
+# RTSP/FFMPEG Testing
 
-
-
+## Running the script
+Configure an ffmpeg camera on viam-server.
+Make sure that you update the robot address.
 ## Results
 
 Calling successively `stream.Next()` will return multiple times the same image at high pace.
@@ -10,10 +10,10 @@ This script aims at measuring the “real” latency, meaning how fast can we ge
 
 To be precise, this value is the average time to get an image multiplied by the average number of times a same image is returned. 
 
-Example: 
-If `stream.Next()` takes on average 3ms and on average the same image is returned 13.7 times, the real latency is 3ms*13.7 = 41.1 ms (24.3 Hz).
+Example:<br>
+If `stream.Next()` takes on average 3ms and on average the same image is returned 13.7 times, the real latency is: <em>3ms*13.7 ≈ 41.1 ms (24.3 Hz).</em>
 
-If you are concerned if the average number of times “makes sense”, you can plot a histogram of the distribution by calling `plotHistogram()`. From what I have seen, the variance is low. 
+If you are concerned if the average number of times is significant, you can plot a histogram of the distribution by calling `plotHistogram()`. From what I have seen, the variance is low. 
 The stastical significancy of the average time per operation should be guaranteed by the native Go `Benchmark` implementation. 
 
 ## Important notes
