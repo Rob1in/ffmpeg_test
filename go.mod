@@ -1,6 +1,6 @@
 module my_test
 
-go 1.20
+go 1.19
 
 require (
 	github.com/edaniels/golog v0.0.0-20230215213219-28954395e8d0
